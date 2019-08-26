@@ -90,7 +90,11 @@ const AreaChart = ({ dataset, width, height, marginLeft, marginTop }) => {
 
       focus.attr('cx', x(selectedData.date)).attr('cy', y(selectedData.price))
       focusText
-        .html(`date: ${selectedData.date} -  price: ${selectedData.price}`)
+        .html(
+          `date: ${selectedData.date.toLocaleDateString()} - price: ${selectedData.price.toFixed(
+            2
+          )}`
+        )
         .attr('x', x(selectedData.date) + 15)
         .attr('y', y(selectedData.price))
     }
