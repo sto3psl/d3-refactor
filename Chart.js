@@ -1,8 +1,6 @@
-// @flow
 import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import * as d3 from 'd3'
-import styled from '@emotion/styled'
 
 const AreaChart = ({ dataset, width, height, marginLeft, marginTop }) => {
   const ref = useRef()
