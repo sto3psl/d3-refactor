@@ -12,7 +12,7 @@ const AreaChart = ({ dataset, width, height, marginLeft, marginTop }) => {
         date: d3.timeParse('%Y-%m-%dT%H:%M:%S')(dp.date),
         price: Number(dp.price)
       }))
-      return formatedData
+      return formatedData.reverse()
     }
 
     const finalizedData = formatDate()
