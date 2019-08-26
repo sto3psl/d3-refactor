@@ -60,6 +60,7 @@ const AreaChart = ({ dataset, width, height, marginLeft, marginTop }) => {
       .append('g')
       .append('text')
       .style('opacity', 0)
+      .style('text-shadow', '-1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff')
       .attr('text-anchor', 'left')
       .attr('alignment-baseline', 'middle')
 
