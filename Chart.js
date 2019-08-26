@@ -127,7 +127,7 @@ const AreaChart = ({ dataset, width, height, marginLeft, marginTop }) => {
           .y(function(dp) { return y(dp.value) })
           )
           */
-  }, [])
+  }, [dataset, height, width])
 
   return (
     <>
