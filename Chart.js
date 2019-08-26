@@ -34,6 +34,20 @@ const AreaChart = ({ dataset, width, height, marginLeft, marginTop }) => {
 
     let bisect = d3.bisector(dp => dp.date).left
 
+    group
+      .append('path')
+      .datum(finalizedData)
+      .attr('fill', 'none')
+      .attr('stroke', 'steelblue')
+      .attr('stroke-width', 1.5)
+      .attr(
+        'd',
+        d3
+          .line()
+          .x(d => x(d.date))
+          .y(d => y(d.price))
+      )
+
     const focus = group
       .append('g')
       .append('circle')
@@ -58,20 +72,6 @@ const AreaChart = ({ dataset, width, height, marginLeft, marginTop }) => {
       .on('mouseover', mouseover)
       .on('mousemove', mousemove)
       .on('mouseout', mouseout)
-
-    group
-      .append('path')
-      .datum(finalizedData)
-      .attr('fill', 'none')
-      .attr('stroke', 'steelblue')
-      .attr('stroke-width', 1.5)
-      .attr(
-        'd',
-        d3
-          .line()
-          .x(d => x(d.date))
-          .y(d => y(d.price))
-      )
 
     // What happens when the mouse move -> show the annotations at the right positions.
     const mouseover = () => {
