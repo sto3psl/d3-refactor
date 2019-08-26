@@ -75,7 +75,7 @@ const AreaChart = ({ dataset, width, height, marginLeft, marginTop }) => {
       .on('mouseout', mouseout)
 
     // What happens when the mouse move -> show the annotations at the right positions.
-    const mouseover = () => {
+    function mouseover() {
       focus.style('opacity', 1)
       focusText.style('opacity', 1)
     }
@@ -98,7 +98,7 @@ const AreaChart = ({ dataset, width, height, marginLeft, marginTop }) => {
         .attr('x', x(selectedData.date) + 15)
         .attr('y', y(selectedData.price))
     }
-    const mouseout = () => {
+    function mouseout() {
       focus.style('opacity', 0)
       focusText.style('opacity', 0)
     }
