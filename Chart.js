@@ -131,6 +131,6 @@ const AreaChart = ({ dataset, width, height, marginLeft, marginTop }) => {
 }
 
 AreaChart.displayName = 'AreaChart'
-AreaChart.protoTypes = {}
+AreaChart.propTypes = {}
 
 export default AreaChart
