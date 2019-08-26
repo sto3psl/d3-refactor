@@ -32,7 +32,7 @@ const AreaChart = ({ dataset, width, height, marginLeft, marginTop }) => {
       .range([height, 0])
     group.append('g').call(d3.axisLeft(y))
 
-    let bisect = d3.bisector(dp => dp.x).left
+    let bisect = d3.bisector(dp => dp.date).left
 
     const focus = group
       .append('g')
