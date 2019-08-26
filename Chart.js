@@ -85,6 +85,9 @@ const AreaChart = ({ dataset, width, height, marginLeft, marginTop }) => {
       let x0 = x.invert(d3.mouse(this)[0])
       let i = bisect(finalizedData, x0, 1)
       let selectedData = finalizedData[i]
+
+      if (!selectedData) return
+
       focus.attr('cx', x(selectedData.date)).attr('cy', y(selectedData.price))
       focusText
         .html(`date: ${selectedData.date} -  price: ${selectedData.price}`)
